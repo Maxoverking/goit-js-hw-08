@@ -9,7 +9,6 @@ import SimpleLightbox from "simplelightbox";
 
 import "simplelightbox/dist/simple-lightbox.min.css";
 
-
 const refsGalleryEl = document.querySelector('.gallery');
 // console.log("🚀 refsGalleryEl", refsGalleryEl);
 
@@ -33,3 +32,5 @@ function createGalleryItems(galleryItems) {
        <img class="gallery__image" src="${preview}" alt="${description}" />
      </a>`}).join('');   
 }
+
+
