@@ -5,10 +5,10 @@ const email = document.querySelector('input');
 const textarea = document.querySelector('textarea');
 const LOCALSTORAGE_KEY = 'feedback-form-state';
 
-form.addEventListener('input', throttle(formFill, 500));
+form.addEventListener('input', throttle( fillForm , 500));
 form.addEventListener('submit', submitForm);
 
-function formFill(){
+function fillForm(){
     const newObjSave = { email: email.value , message: textarea.value };
     // console.log("🚀 ~ formObj", newObjSave);
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(newObjSave));
@@ -18,7 +18,7 @@ function submitForm(evt) {
     evt.preventDefault();
     console.log({ email: email.value, message: textarea.value });
     form.reset();
-    localStorage.getItem(LOCALSTORAGE_KEY);
+    localStorage.removeItem(LOCALSTORAGE_KEY);
 };
 
 function loadingStorage () {
@@ -28,7 +28,6 @@ function loadingStorage () {
 };
 
 const storageData = loadingStorage();
-
 // console.log("🚀 ~ storageData", storageData);
 if (storageData) {
   email.value = storageData.email;
