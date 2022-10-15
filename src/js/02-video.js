@@ -12,10 +12,11 @@ function onPlay(event) {
     // console.log("🚀 ~ e", event.seconds);   
     localStorage.setItem(LOCALSTORAGE_KEY, event.seconds);
 };
-const getLocalStorage = localStorage.getItem(LOCALSTORAGE_KEY); 
 
-if (getLocalStorage === null || getLocalStorage === undefined) {
+const getLocalStorageValue = localStorage.getItem(LOCALSTORAGE_KEY); 
+
+if (getLocalStorageValue === null || getLocalStorageValue === undefined) {
     return ;
 } else {
-    player.setCurrentTime(getLocalStorage);
+    player.setCurrentTime(getLocalStorageValue);
 };
